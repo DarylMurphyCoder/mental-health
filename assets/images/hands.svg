@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="300" height="300" role="img" aria-labelledby="handsTitle">
+  <title id="handsTitle">Helping hands icon</title>
+  <g fill="none" stroke="#f59e0b" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M10 44c6-8 18-14 26-14s20 6 26 14"/>
+    <path d="M22 34c2-6 8-10 14-10s12 4 14 10"/>
+    <path d="M18 46c4-3 10-5 14-5s10 2 14 5"/>
+  </g>
+</svg>

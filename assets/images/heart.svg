@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="300" height="300" role="img" aria-labelledby="heartTitle">
+  <title id="heartTitle">Heart icon</title>
+  <g fill="none" stroke="#ff6b6b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M32 50s-18-12-18-24c0-6 4-10 10-10 4 0 8 3 10 6 2-3 6-6 10-6 6 0 10 4 10 10 0 12-18 24-18 24z" fill="#fff" stroke="#ff6b6b"/>
+  </g>
+</svg>

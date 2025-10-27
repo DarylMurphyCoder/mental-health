@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="300" height="300" role="img" aria-labelledby="chatTitle">
+  <title id="chatTitle">Chat bubble icon</title>
+  <g fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="8" y="10" width="48" height="34" rx="4" fill="#fff" stroke="#6b7280"/>
+    <path d="M20 32h24"/>
+    <path d="M20 24h24"/>
+    <path d="M16 44l-4 8 10-6"/>
+  </g>
+</svg>
