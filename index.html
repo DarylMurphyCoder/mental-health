@@ -1,0 +1,139 @@
+
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Mental Health — Support & Resources</title>
+		<meta name="description" content="A simple responsive template for mental health support, resources, and self-care tools.">
+		<!-- Bootstrap CSS (CDN) -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+		<!-- Custom stylesheet (overrides Bootstrap where needed) -->
+		<link rel="stylesheet" href="assets/css/styles.css">
+	</head>
+	<body>
+		<header class="site-header">
+			<div class="container header-inner">
+				<a class="brand" href="#">MindfulCare</a>
+				<nav class="main-nav" aria-label="Primary navigation">
+					<button class="nav-toggle" aria-expanded="false" aria-controls="primary-navigation">Menu</button>
+					<ul id="primary-navigation" class="nav-list">
+						<li><a href="#about">About</a></li>
+						<li><a href="#resources">Resources</a></li>
+						<li><a href="#self-check">Self-Check</a></li>
+						<li><a href="#contact">Contact</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+
+		<main>
+			<section class="hero" aria-labelledby="hero-heading">
+				<div class="container hero-inner">
+					<h1 id="hero-heading">You Are Not Alone</h1>
+					<p class="lead">Practical resources, self-care tips, and immediate support to help you through tough moments.</p>
+					<div class="hero-actions">
+						<a class="btn primary" href="#resources">Find Resources</a>
+						<a class="btn ghost" href="#self-check">Try a Self-Check</a>
+					</div>
+				</div>
+			</section>
+
+			<section id="about" class="container section about" aria-labelledby="about-heading">
+				<h2 id="about-heading">About this page</h2>
+				<p>This template offers a calm, accessible layout to share mental health information. It's mobile-first and built with flexible containers so content adapts across screen sizes.</p>
+			</section>
+
+			<section id="resources" class="container section resources" aria-labelledby="resources-heading">
+				<h2 id="resources-heading">Resources & Services</h2>
+				<div class="grid grid-3">
+					<article class="card">
+						<h3>Hotlines & Emergency</h3>
+						<p>If you're in immediate danger or need urgent help, call your local emergency number or a crisis hotline.</p>
+					</article>
+					<article class="card">
+						<h3>Therapy & Counseling</h3>
+						<p>Find licensed professionals in your area, online therapy options, and affordability support.</p>
+					</article>
+					<article class="card">
+						<h3>Self-Help Tools</h3>
+						<p>Breathing exercises, grounding techniques, and short guided activities to reduce distress.</p>
+					</article>
+				</div>
+			</section>
+
+			<section id="self-check" class="container section self-check" aria-labelledby="selfcheck-heading">
+				<h2 id="selfcheck-heading">Quick Self-Check</h2>
+				<p>Answer a few simple prompts to reflect on how you're feeling right now.</p>
+				<form class="selfcheck-form" aria-describedby="selfcheck-desc">
+					<p id="selfcheck-desc" class="visually-hidden">This is a short self-assessment for reflection only and not a diagnosis.</p>
+					<label class="field">
+						<span>Over the past 2 weeks, how often have you felt down or hopeless?</span>
+						<select name="mood">
+							<option>Not at all</option>
+							<option>Several days</option>
+							<option>More than half the days</option>
+							<option>Nearly every day</option>
+						</select>
+					</label>
+					<label class="field">
+						<span>Are you currently able to do activities that bring you pleasure?</span>
+						<select name="pleasure">
+							<option>Yes</option>
+							<option>Sometimes</option>
+							<option>No</option>
+						</select>
+					</label>
+					<div class="form-actions">
+						<button class="btn primary" type="submit">Reflect</button>
+						<a class="btn ghost" href="#resources">Get Help Now</a>
+					</div>
+				</form>
+			</section>
+
+			<section class="container section tips" aria-labelledby="tips-heading">
+				<h2 id="tips-heading">Coping Tips</h2>
+				<ul class="tips-list">
+					<li>Practice a 4-4-4 breathing exercise for one minute.</li>
+					<li>Go outside for a short walk and notice 3 things you can see.</li>
+					<li>Try a grounding technique: name 5 things you can touch.</li>
+				</ul>
+			</section>
+		</main>
+
+		<footer class="site-footer" id="contact">
+			<div class="container footer-inner">
+				<div>
+					<strong>MindfulCare</strong>
+					<p class="muted">Not a substitute for professional care. If you're in crisis, seek immediate help.</p>
+				</div>
+				<nav aria-label="Footer">
+					<ul class="footer-links">
+						<li><a href="#about">About</a></li>
+						<li><a href="#resources">Resources</a></li>
+						<li><a href="#contact">Contact</a></li>
+					</ul>
+				</nav>
+			</div>
+		</footer>
+
+			<script>
+				// Simple nav toggle for small screens (kept for the existing markup)
+				(function(){
+					const btn = document.querySelector('.nav-toggle');
+					const nav = document.getElementById('primary-navigation');
+					if(!btn || !nav) return;
+					btn.addEventListener('click', ()=>{
+						const expanded = btn.getAttribute('aria-expanded') === 'true';
+						btn.setAttribute('aria-expanded', String(!expanded));
+						nav.classList.toggle('open');
+					});
+				})();
+			</script>
+
+			<!-- Bootstrap bundle (includes Popper) -->
+			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+	</body>
+</html>
+
