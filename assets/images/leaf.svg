@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="300" height="300" role="img" aria-labelledby="leafTitle">
+  <title id="leafTitle">Leaf icon</title>
+  <g fill="none" stroke="#2fbf71" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 52c10-20 40-30 40-30s-6 22-20 34"/>
+    <path d="M28 36c6 2 12 2 18 0"/>
+    <path d="M24 28c6-1 12-1 18 0"/>
+  </g>
+</svg>
