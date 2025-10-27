@@ -3,10 +3,11 @@
 	--brand: #2659ff;
 	--muted: #6c757d;
 	--bg: #f8fbff;
+	--nav-height: 64px; /* height for the fixed navbar */
 }
 /* Basic reset and body */
 *{box-sizing:border-box}
-body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial;line-height:1.45;background:var(--bg);color:#0b1724;margin:0}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial;line-height:1.45;background:var(--bg);color:#0b1724;margin:0;padding-top:var(--nav-height)}
 
 /* Hero illustration box */
 .hero-illustration{height:180px;display:flex;align-items:center;justify-content:center}
@@ -18,7 +19,7 @@ header {
 	background-position: center;   /* center the focal point */
 	background-repeat: no-repeat;  /* prevent tiling of small images */
 	background-attachment: scroll; /* keep normal scrolling on mobile-friendly browsers */
-	min-height: 100vh;             /* make header fill the viewport height */
+	min-height: calc(100vh - var(--nav-height));             /* make header fill the viewport height minus navbar */
 	display: flex;
 	align-items: center;           /* vertically center hero content */
 }
@@ -31,5 +32,8 @@ header {
 /* Responsive tweaks */
 @media (max-width:575.98px){
 	.hero-illustration{height:140px}
-	header{min-height:60vh} /* shorter header on small screens to avoid excessive scroll */
+	header{min-height:calc(60vh - var(--nav-height));} /* shorter header on small screens to avoid excessive scroll */
 }
+
+/* Navbar fixed sizing */
+.navbar.fixed-top{height:var(--nav-height);display:flex;align-items:center}
