@@ -1,139 +1,185 @@
 
 
+
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Mental Health — Support & Resources</title>
-		<meta name="description" content="A simple responsive template for mental health support, resources, and self-care tools.">
-		<!-- Bootstrap CSS (CDN) -->
+		<title>MindfulCare — Mental Health Resources</title>
+		<meta name="description" content="MindfulCare: resources, tips, and tools to support mental health.">
+		<!-- Bootstrap CSS -->
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-		<!-- Custom stylesheet (overrides Bootstrap where needed) -->
+		<!-- Optional: Bootstrap Icons -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+		<!-- Custom styles -->
 		<link rel="stylesheet" href="assets/css/styles.css">
 	</head>
 	<body>
-		<header class="site-header">
-			<div class="container header-inner">
-				<a class="brand" href="#">MindfulCare</a>
-				<nav class="main-nav" aria-label="Primary navigation">
-					<button class="nav-toggle" aria-expanded="false" aria-controls="primary-navigation">Menu</button>
-					<ul id="primary-navigation" class="nav-list">
-						<li><a href="#about">About</a></li>
-						<li><a href="#resources">Resources</a></li>
-						<li><a href="#self-check">Self-Check</a></li>
-						<li><a href="#contact">Contact</a></li>
+
+		<!-- Navbar -->
+		<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+			<div class="container">
+				<a class="navbar-brand fw-bold text-primary" href="#">MindfulCare</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="mainNav">
+					<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+						<li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+						<li class="nav-item"><a class="nav-link" href="#resources">Resources</a></li>
+						<li class="nav-item"><a class="nav-link" href="#self-check">Self-Check</a></li>
+						<li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
 					</ul>
-				</nav>
+				</div>
+			</div>
+		</nav>
+
+		<!-- Hero -->
+		<header class="bg-primary text-white py-5">
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col-lg-7">
+						<h1 class="display-5 fw-bold">You Are Not Alone</h1>
+						<p class="lead">Practical resources, self-care exercises, and support to help you through difficult moments.</p>
+						<div class="d-flex gap-2 flex-wrap">
+							<a href="#resources" class="btn btn-light btn-lg">Find Resources</a>
+							<a href="#self-check" class="btn btn-outline-light btn-lg">Try a Self-Check</a>
+						</div>
+					</div>
+					<div class="col-lg-5 d-none d-lg-block">
+						<!-- Decorative illustration placeholder -->
+						<div class="hero-illustration bg-white rounded-3 shadow-sm p-4 text-center text-primary">
+							<i class="bi bi-heart-pulse-fill" style="font-size:4rem"></i>
+							<p class="mt-2 mb-0 fw-semibold">Breathe • Pause • Ground</p>
+						</div>
+					</div>
+				</div>
 			</div>
 		</header>
 
-		<main>
-			<section class="hero" aria-labelledby="hero-heading">
-				<div class="container hero-inner">
-					<h1 id="hero-heading">You Are Not Alone</h1>
-					<p class="lead">Practical resources, self-care tips, and immediate support to help you through tough moments.</p>
-					<div class="hero-actions">
-						<a class="btn primary" href="#resources">Find Resources</a>
-						<a class="btn ghost" href="#self-check">Try a Self-Check</a>
+		<main class="py-5">
+			<div class="container">
+				<!-- About -->
+				<section id="about" class="mb-5">
+					<h2 class="h3">About this page</h2>
+					<p class="text-muted">This template provides a calm, accessible layout to share mental health information. Use it to list services, self-help tools, and immediate support options.</p>
+				</section>
+
+				<!-- Resources -->
+				<section id="resources" class="mb-5">
+					<h2 class="h3 mb-3">Resources & Services</h2>
+					<div class="row g-3">
+						<div class="col-md-6 col-lg-4">
+							<div class="card h-100">
+								<div class="card-body">
+									<h3 class="h5">Hotlines & Emergency</h3>
+									<p class="mb-0">If you're in immediate danger, call your local emergency number. Crisis hotlines can offer instant support.</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 col-lg-4">
+							<div class="card h-100">
+								<div class="card-body">
+									<h3 class="h5">Therapy & Counseling</h3>
+									<p class="mb-0">Find licensed professionals, community counseling, and online therapy options.</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 col-lg-4">
+							<div class="card h-100">
+								<div class="card-body">
+									<h3 class="h5">Self-Help Tools</h3>
+									<p class="mb-0">Breathing exercises, grounding practices, and short guided activities you can try now.</p>
+								</div>
+							</div>
+						</div>
 					</div>
-				</div>
-			</section>
+				</section>
 
-			<section id="about" class="container section about" aria-labelledby="about-heading">
-				<h2 id="about-heading">About this page</h2>
-				<p>This template offers a calm, accessible layout to share mental health information. It's mobile-first and built with flexible containers so content adapts across screen sizes.</p>
-			</section>
+				<!-- Self-Check -->
+				<section id="self-check" class="mb-5">
+					<h2 class="h3 mb-3">Quick Self-Check</h2>
+					<p class="text-muted">This short reflection is for self-awareness only and not a diagnosis. If you're concerned, seek professional help.</p>
+					<form id="selfCheckForm" class="row g-3">
+						<div class="col-md-6">
+							<label for="mood" class="form-label">Over the past 2 weeks, how often have you felt down or hopeless?</label>
+							<select id="mood" class="form-select">
+								<option>Not at all</option>
+								<option>Several days</option>
+								<option>More than half the days</option>
+								<option>Nearly every day</option>
+							</select>
+						</div>
+						<div class="col-md-6">
+							<label for="pleasure" class="form-label">Are you currently able to do activities that bring you pleasure?</label>
+							<select id="pleasure" class="form-select">
+								<option>Yes</option>
+								<option>Sometimes</option>
+								<option>No</option>
+							</select>
+						</div>
+						<div class="col-12 d-flex gap-2">
+							<button type="submit" class="btn btn-primary">Reflect</button>
+							<a class="btn btn-outline-secondary" href="#resources">Get Help Now</a>
+							<div id="selfCheckResult" class="ms-auto align-self-center"></div>
+						</div>
+					</form>
+				</section>
 
-			<section id="resources" class="container section resources" aria-labelledby="resources-heading">
-				<h2 id="resources-heading">Resources & Services</h2>
-				<div class="grid grid-3">
-					<article class="card">
-						<h3>Hotlines & Emergency</h3>
-						<p>If you're in immediate danger or need urgent help, call your local emergency number or a crisis hotline.</p>
-					</article>
-					<article class="card">
-						<h3>Therapy & Counseling</h3>
-						<p>Find licensed professionals in your area, online therapy options, and affordability support.</p>
-					</article>
-					<article class="card">
-						<h3>Self-Help Tools</h3>
-						<p>Breathing exercises, grounding techniques, and short guided activities to reduce distress.</p>
-					</article>
-				</div>
-			</section>
-
-			<section id="self-check" class="container section self-check" aria-labelledby="selfcheck-heading">
-				<h2 id="selfcheck-heading">Quick Self-Check</h2>
-				<p>Answer a few simple prompts to reflect on how you're feeling right now.</p>
-				<form class="selfcheck-form" aria-describedby="selfcheck-desc">
-					<p id="selfcheck-desc" class="visually-hidden">This is a short self-assessment for reflection only and not a diagnosis.</p>
-					<label class="field">
-						<span>Over the past 2 weeks, how often have you felt down or hopeless?</span>
-						<select name="mood">
-							<option>Not at all</option>
-							<option>Several days</option>
-							<option>More than half the days</option>
-							<option>Nearly every day</option>
-						</select>
-					</label>
-					<label class="field">
-						<span>Are you currently able to do activities that bring you pleasure?</span>
-						<select name="pleasure">
-							<option>Yes</option>
-							<option>Sometimes</option>
-							<option>No</option>
-						</select>
-					</label>
-					<div class="form-actions">
-						<button class="btn primary" type="submit">Reflect</button>
-						<a class="btn ghost" href="#resources">Get Help Now</a>
-					</div>
-				</form>
-			</section>
-
-			<section class="container section tips" aria-labelledby="tips-heading">
-				<h2 id="tips-heading">Coping Tips</h2>
-				<ul class="tips-list">
-					<li>Practice a 4-4-4 breathing exercise for one minute.</li>
-					<li>Go outside for a short walk and notice 3 things you can see.</li>
-					<li>Try a grounding technique: name 5 things you can touch.</li>
-				</ul>
-			</section>
+				<!-- Tips -->
+				<section class="mb-5">
+					<h2 class="h3 mb-3">Coping Tips</h2>
+					<ul class="list-group list-group-flush">
+						<li class="list-group-item">Practice a 4-4-4 breathing exercise for one minute.</li>
+						<li class="list-group-item">Go outside for a short walk and notice three things you can see.</li>
+						<li class="list-group-item">Try a grounding technique: name five things you can touch.</li>
+					</ul>
+				</section>
+			</div>
 		</main>
 
-		<footer class="site-footer" id="contact">
-			<div class="container footer-inner">
-				<div>
-					<strong>MindfulCare</strong>
-					<p class="muted">Not a substitute for professional care. If you're in crisis, seek immediate help.</p>
+		<!-- Footer -->
+		<footer class="bg-light py-4">
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col-md-6">
+						<strong>MindfulCare</strong>
+						<p class="mb-0 text-muted">Not a substitute for professional care. If you're in crisis, seek immediate help.</p>
+					</div>
+					<div class="col-md-6 text-md-end mt-3 mt-md-0">
+						<a href="#about" class="text-muted me-3">About</a>
+						<a href="#resources" class="text-muted me-3">Resources</a>
+						<a href="#contact" class="text-muted">Contact</a>
+					</div>
 				</div>
-				<nav aria-label="Footer">
-					<ul class="footer-links">
-						<li><a href="#about">About</a></li>
-						<li><a href="#resources">Resources</a></li>
-						<li><a href="#contact">Contact</a></li>
-					</ul>
-				</nav>
 			</div>
 		</footer>
 
-			<script>
-				// Simple nav toggle for small screens (kept for the existing markup)
-				(function(){
-					const btn = document.querySelector('.nav-toggle');
-					const nav = document.getElementById('primary-navigation');
-					if(!btn || !nav) return;
-					btn.addEventListener('click', ()=>{
-						const expanded = btn.getAttribute('aria-expanded') === 'true';
-						btn.setAttribute('aria-expanded', String(!expanded));
-						nav.classList.toggle('open');
-					});
-				})();
-			</script>
-
-			<!-- Bootstrap bundle (includes Popper) -->
-			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+		<!-- Bootstrap JS bundle (includes Popper) -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+		<!-- Small client script for self-check -->
+		<script>
+			document.getElementById('selfCheckForm').addEventListener('submit', function(e){
+				e.preventDefault();
+				const mood = document.getElementById('mood').value;
+				const pleasure = document.getElementById('pleasure').value;
+				const resultEl = document.getElementById('selfCheckResult');
+				// very small, non-diagnostic feedback
+				let score = 0;
+				if (mood === 'Several days') score += 1;
+				if (mood === 'More than half the days') score += 2;
+				if (mood === 'Nearly every day') score += 3;
+				if (pleasure === 'Sometimes') score += 1;
+				if (pleasure === 'No') score += 2;
+				let message = '';
+				if (score <= 1) message = '<span class="text-success">You seem relatively well right now. Keep practicing self-care.</span>';
+				else if (score <= 3) message = '<span class="text-warning">Consider reaching out to a friend or a trusted person and monitoring how you feel.</span>';
+				else message = '<span class="text-danger">If these feelings continue, consider contacting a professional or a support line.</span>';
+				resultEl.innerHTML = message;
+			});
+		</script>
 	</body>
 </html>
+
 
