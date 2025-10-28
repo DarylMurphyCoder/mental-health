@@ -1,7 +1,5 @@
 ﻿# MindfulCare  Mental Health page
 
-[![CI](https://github.com/DarylMurphyCoder/mental-health/actions/workflows/ci.yml/badge.svg)](https://github.com/DarylMurphyCoder/mental-health/actions/workflows/ci.yml)
-
 MindfulCare is a simple, responsive mental-health template built with Bootstrap 5. It provides a calm layout for sharing resources, a quick (non-diagnostic) self-check, coping tips, and clear actions to find help.
 
 This README focuses on the page (what it contains, how to preview locally, and where to edit content).
@@ -24,22 +22,6 @@ python -m http.server 8000
 ```
 
 Or open `index.html` directly in your browser. Using a local server is recommended for correct handling of some browser features.
-
-## Continuous Integration
-
-This repository includes a GitHub Actions workflow (`.github/workflows/ci.yml`) that runs HTML and CSS linters on pushes and pull requests.
-
-Badge above reflects the workflow status. When the workflow runs it will validate HTML (html-validate) and lint CSS (stylelint). If you want to run the same checks locally:
-
-```powershell
-# install dependencies (requires Node.js)
-npm ci
-
-# run linters
-npm run lint
-```
-
-If you prefer W3C validation (vnu) or different tools, I can switch the workflow accordingly.
 
 ## Page structure (quick guide)
 
