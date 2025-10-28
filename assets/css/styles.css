@@ -60,6 +60,15 @@ header {
 
 .card.h-100 { overflow: hidden; }
 
+/* Apply footer color to all cards/boxes inside the main content so they match the footer */
+main .card,
+main .tip-box,
+main .card .card-body {
+  background-color: #91b8da !important;
+  color: #ffffff !important;
+  border: 0 !important;
+}
+
 /* Ensure hero content inside the header is left-aligned */
 header .container{ text-align: left }
 header .col-lg-7{ align-self:flex-start }
@@ -210,7 +219,7 @@ header .btn:focus {
   border: none;
 }
 .dropdown-menu .dropdown-item {
-  color: #141414;
+  color: #ffffff;
   padding: 0.35rem 0.75rem;
 }
 .navbar .dropdown-menu .dropdown-item,
