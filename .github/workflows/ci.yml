@@ -1,9 +1,10 @@
-name: CI — (disabled)
+name: CI — Lint HTML & CSS
 
-# Workflow triggers disabled to prevent automatic runs.
-# This workflow can be re-enabled manually by restoring automatic triggers.
 on:
-  workflow_dispatch: {}
+  push:
+    branches: [ main, workingbench ]
+  pull_request:
+    branches: [ main ]
 
 jobs:
   lint:
@@ -18,5 +19,11 @@ jobs:
         with:
           node-version: '20'
 
-      - name: No-op
-        run: echo "CI disabled — manual workflow only"
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint HTML (html-validate)
+        run: npm run lint:html
+
+      - name: Lint CSS (stylelint)
+        run: npm run lint:css
