@@ -54,5 +54,16 @@ header {
 .tip-box .box-icon{width:1.2rem;height:1.2rem;margin-right:.6rem}
 
 /* Make footer a very light blue while preserving muted text color */
-footer.bg-light{background-color:#91b8da !important; /* AliceBlue - very light blue */}
+footer.bg-light{background-color:#91b8da !important; /* very light blue */}
 footer.bg-light .text-muted, footer.bg-light .site-footer{color:var(--muted)}
+
+/* Resource cards: match footer background for a cohesive look */
+#resources .card{background-color:#91b8da;border:0;color:#0b1724}
+#resources .card .card-body h3{color:inherit}
+#resources .card .card-body p{color:inherit;opacity:0.95}
+
+/* Coping tips boxes: match footer and resource card color */
+.tip-box{background-color:#91b8da;border:0;color:#0b1724}
+.tip-box .card-body p{color:inherit;opacity:0.95}
+
+/* Self-check area: reverted to default -- earlier lighter-blue styles removed */
