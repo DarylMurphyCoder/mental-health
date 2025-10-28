@@ -38,6 +38,11 @@ header {
   position: relative; /* ensure absolutely positioned hero elements anchor correctly */
 }
 /* Tweak card appearance */
+.card{border:0;border-radius:.75rem}
+
+/* Image area for resource cards */
+.resource-img{display:block;width:100%;height:140px;object-fit:cover}
+.card.h-100{overflow:hidden}
 .card {
   border: 0;
   border-radius: 0.75rem;
@@ -260,36 +265,7 @@ header .btn:focus {
 
 /* Make footer a very light blue while preserving muted text color */
 footer.bg-light{background-color:#91b8da !important; /* AliceBlue - very light blue */}
-/* Make all footer content use white for better contrast on the light-blue footer */
-footer.bg-light .text-muted,
-footer.bg-light .site-footer,
-footer.bg-light a,
-footer.bg-light p,
-footer.bg-light strong,
-footer.bg-light .social-icons a,
-footer.bg-light i {
-  color: #ffffff !important;
-}
-
-/* Footer links: keep an accessible hover state */
-footer.bg-light a:hover,
-footer.bg-light a:focus {
-  color: rgba(255,255,255,0.9) !important;
-  text-decoration: underline;
-}
-
-/* Make resource cards and tip boxes match the footer color for a cohesive look */
-#resources .card,
-.tip-box {
-  background-color: #91b8da !important;
-  border: 0;
-  color: #ffffff !important; /* keep text readable on the colored background */
-}
-
-#resources .card .card-body,
-.tip-box .card-body {
-  color: #ffffff !important;
-}
+footer.bg-light .text-muted, footer.bg-light .site-footer{color:var(--muted)}
 
 /* Center headings and paragraphs inside the main content area */
 main h1,
@@ -300,27 +276,4 @@ main p,
 main .lead,
 main .card-body p {
 	text-align: center;
-}
-
-/* Make all text white site-wide, but keep form/select options dark for readability */
-html,
-body,
-body * {
-  color: #ffffff !important;
-}
-
-/* Ensure all interactive control text is white as well (selects, inputs, buttons, textarea) */
-select,
-select option,
-input,
-textarea,
-button,
-option {
-  color: #ffffff !important;
-}
-
-/* Keep option backgrounds dark so white option text stays readable */
-select option,
-option {
-  background-color: #0b1724 !important;
 }
