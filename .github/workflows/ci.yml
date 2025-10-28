@@ -20,7 +20,8 @@ jobs:
           node-version: '20'
 
       - name: Install dependencies
-        run: npm ci
+        # prefer clean install with lockfile, but fall back to `npm install` if lockfile is missing
+        run: npm ci || npm install --no-audit --no-fund
 
       - name: Lint HTML (html-validate)
         run: npm run lint:html
