@@ -53,7 +53,6 @@ Or open `index.html` directly in your browser. Using a local server is recommend
 
 - Convert the self-check result to use a Bootstrap Toast or Modal for clearer feedback.
 - Add SVG illustrations (accessible with descriptive text) to improve visual clarity.
-- Add a small CI check (HTML/CSS validation) to run on PRs.
 
 ## License
 
