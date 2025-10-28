@@ -230,7 +230,7 @@ footer.bg-light .site-footer {
 #resources .card {
   background-color: #91b8da;
   border: 0;
-  color: #0b1724;
+  color: #ffffff;
 }
 #resources .card .card-body h3 {
   color: inherit;
@@ -245,7 +245,7 @@ footer.bg-light .site-footer {
 .tip-box {
   background-color: #91b8da;
   border: 0;
-  color: #0b1724;
+  color: #ffffff;
 }
 .tip-box .card-body p {
   color: inherit;
@@ -319,4 +319,25 @@ main > [id],
 #self-check select option {
   color: #0b1724 !important;
   background-color: #ffffff !important;
+}
+
+/* Ensure the main content uses white text everywhere except where explicitly overridden (form dropdowns remain dark). */
+main,
+main * {
+  color: #ffffff !important;
+}
+
+/* Resource cards and tip boxes should also use white text to match the rest of the site. */
+#resources .card,
+#resources .card .card-body,
+.tip-box,
+.tip-box .card-body {
+  color: #ffffff !important;
+}
+
+/* Ensure headings and paragraphs inside resource/tip cards inherit white */
+#resources .card .card-body h3,
+#resources .card .card-body p,
+.tip-box .card-body p {
+  color: #ffffff !important;
 }
