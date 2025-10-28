@@ -42,3 +42,9 @@ header {
 
 /* Navbar fixed sizing */
 .navbar.fixed-top{height:var(--nav-height);display:flex;align-items:center}
+
+/* Social icon list used in footer */
+.social-icons{gap:.6rem;align-items:center}
+.social-icons a{display:inline-flex;color:var(--muted);font-size:1.15rem;transition:color .18s ease,transform .12s ease}
+.social-icons a:hover{color:var(--brand);transform:translateY(-2px)}
+.social-icons a i{vertical-align:middle}
