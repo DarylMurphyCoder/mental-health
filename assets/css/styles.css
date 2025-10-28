@@ -52,3 +52,7 @@ header {
 /* Small icon used inside cards and tip boxes */
 .box-icon{width:1.15rem;height:1.15rem;margin-right:.5rem;vertical-align:middle;filter:grayscale(20%)}
 .tip-box .box-icon{width:1.2rem;height:1.2rem;margin-right:.6rem}
+
+/* Make footer a very light blue while preserving muted text color */
+footer.bg-light{background-color:#91b8da !important; /* AliceBlue - very light blue */}
+footer.bg-light .text-muted, footer.bg-light .site-footer{color:var(--muted)}
