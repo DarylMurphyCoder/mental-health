@@ -1,69 +1,322 @@
-
-:root{
-	--brand: #2659ff;
-	--muted: #6c757d;
-	--bg: #85a2c8;
-	--nav-height: 64px; /* height for the fixed navbar */
+:root {
+  --brand: #2659ff;
+  --muted: #6c757d;
+  --bg: #85a2c8;
+  --nav-height: 64px; /* height for the fixed navbar */
 }
 /* Basic reset and body */
-*{box-sizing:border-box}
-body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial;line-height:1.45;background:var(--bg);color:#0b1724;margin:0;padding-top:var(--nav-height)}
+* {
+  box-sizing: border-box;
+}
 
 
-/* Hero illustration box */
-.hero-illustration{height:180px;display:flex;align-items:center;justify-content:center}
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial;
+  line-height: 1.45;
+  background: var(--bg);
+  color: #0b1724;
+  margin: 0;
+  padding-top: var(--nav-height);
+}
+
+
 
 /* Header background: use a single image that covers the viewport without repeating */
 header {
-	background-image: url('../images/mentalhealthherono.jpeg');
-	background-size: cover;        /* scale image to cover entire header area */
-	background-position: center;   /* center the focal point */
-	background-repeat: no-repeat;  /* prevent tiling of small images */
-	background-attachment: scroll; /* keep normal scrolling on mobile-friendly browsers */
-	min-height: calc(100vh - var(--nav-height));             /* make header fill the viewport height minus navbar */
-	display: flex;
-	align-items: center;           /* vertically center hero content */
+  background-image: url("../images/mentalhealthherono.jpeg");
+  background-size: cover; /* scale image to cover entire header area */
+  background-position: center; /* center the focal point */
+  background-repeat: no-repeat; /* prevent tiling of small images */
+  background-attachment: scroll; /* keep normal scrolling on mobile-friendly browsers */
+  min-height: calc(
+    100vh - var(--nav-height)
+  ); /* make header fill the viewport height minus navbar */
+  display: flex;
+  align-items: flex-start; /* align hero content to top */
+  padding-top: 2rem; /* nudge content down slightly from very top */
+  position: relative; /* ensure absolutely positioned hero elements anchor correctly */
 }
 /* Tweak card appearance */
-.card{border:0;border-radius:.75rem}
+.card {
+  border: 0;
+  border-radius: 0.75rem;
+}
+
+/* Ensure hero content inside the header is left-aligned */
+header .container{ text-align: left }
+header .col-lg-7{ align-self:flex-start }
+
+/* Reduce hero content sizes approximately 20px visually on larger screens.
+   This targets display headings and buttons inside the hero. */
+header h1.display-5,
+header .hero-bottom-heading {
+  /* Bootstrap's display-5 is ~2.5rem by default; subtract 20px to make it smaller.
+     Using !important to override bootstrap utility classes in the hero only. */
+  font-size: calc(2.5rem - 20px) !important;
+  line-height: 1.05;
+}
+
+header .btn {
+  font-size: 0.95rem !important;
+  padding: 0.5rem 0.9rem !important;
+}
+
+/* Provide a safer mobile fallback so text doesn't become too small on phones */
+@media (max-width: 991.98px) {
+  header h1.display-5,
+  header .hero-bottom-heading {
+    font-size: 1.6rem !important;
+  }
+  header .btn {
+    font-size: 0.95rem !important;
+    padding: 0.55rem 0.9rem !important;
+  }
+}
 
 /* Tips box styling */
-.tip-box{border-radius:.85rem;box-shadow:0 6px 18px rgba(2,6,23,0.06);}
-.tip-box .card-body p{font-size:1rem;line-height:1.4}
+.tip-box {
+  border-radius: 0.85rem;
+  box-shadow: 0 6px 18px rgba(2, 6, 23, 0.06);
+}
+.tip-box .card-body p {
+  font-size: calc(1rem + 5px);
+  line-height: 1.4;
+}
 
 /* Footer small */
-.site-footer{font-size:.95rem;color:var(--muted)}
+.site-footer {
+  font-size: 0.95rem;
+  color: var(--muted);
+}
 
 /* Responsive tweaks */
-@media (max-width:575.98px){
-	.hero-illustration{height:140px}
-	header{min-height:calc(60vh - var(--nav-height));} /* shorter header on small screens to avoid excessive scroll */
+@media (max-width: 575.98px) {
+  .hero-illustration {
+    height: 140px;
+  }
+  header {
+    min-height: calc(60vh - var(--nav-height));
+  } /* shorter header on small screens to avoid excessive scroll */
+}
+
+/* Laptops and larger: align hero content to bottom-left and make it 15px larger */
+@media (min-width: 992px) {
+  /* Move the hero content to the bottom of the header */
+  header {
+    align-items: flex-end; /* place the container at the bottom */
+    padding-top: 0.5rem;
+    padding-bottom: 2rem; /* add breathing room from the bottom */
+  }
+
+  /* Ensure container content is left-aligned when anchored to bottom */
+  header .container {
+    text-align: left;
+  }
+
+  /* Increase the primary hero headings and any bottom heading by ~15px */
+  header h1.display-5,
+  header .hero-bottom-heading {
+    /* Bootstrap display-5 default ~2.5rem; adding 15px makes it more prominent on large screens */
+    font-size: calc(2.5rem + 15px) !important;
+    line-height: 1.02;
+  }
+
+  /* Slightly larger buttons in the hero for better balance */
+  header .btn {
+    font-size: 1.05rem !important;
+    padding: 0.6rem 1rem !important;
+  }
+
+  /* Keep the hero-bottom-heading in-flow (not absolutely positioned) when using flex-end alignment */
+  .hero-bottom-heading {
+    position: static !important;
+    max-width: 60%;
+  }
 }
 
 /* Navbar fixed sizing */
-.navbar.fixed-top{height:var(--nav-height);display:flex;align-items:center}
+.navbar.fixed-top {
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+}
+
+/* Make navbar use the same background as the page so it blends with main content */
+.navbar.bg-white {
+  background-color: var(--bg) !important;
+}
+/* Ensure navbar text is white for contrast against the blue background */
+.navbar.bg-white .nav-link {
+  color: #ffffff !important;
+}
+.navbar.bg-white .navbar-brand {
+  color: #ffffff !important;
+}
+/* Make the toggler (hamburger) visible on the darker background */
+.navbar.bg-white .navbar-toggler-icon {
+  filter: invert(1) brightness(2);
+}
+
+/* Dropdown menu styling to match navbar: white text, tighter spacing */
+.dropdown-menu {
+  background-color: var(--bg);
+  border: none;
+}
+.dropdown-menu .dropdown-item {
+  color: #141414;
+  padding: 0.35rem 0.75rem;
+}
+.navbar .dropdown-menu .dropdown-item,
+.dropdown-menu .dropdown-item {
+  color: #0b1724 !important; /* dark text */
+}
+.navbar .dropdown-menu .dropdown-item:hover,
+.dropdown-menu .dropdown-item:hover,
+.navbar .dropdown-menu .dropdown-item:focus,
+.dropdown-menu .dropdown-item:focus {
+  color: #0b1724 !important;
+  background-color: rgba(255,255,255,0.12) !important;
+}
+.dropdown-menu .dropdown-item:hover,
+.dropdown-menu .dropdown-item:focus {
+  background-color: rgba(11, 23, 36, 0.08);
+  color: #ffffff;
+}
 
 /* Social icon list used in footer */
-.social-icons{gap:.6rem;align-items:center}
-.social-icons a{display:inline-flex;color:var(--muted);font-size:1.15rem;transition:color .18s ease,transform .12s ease}
-.social-icons a:hover{color:var(--brand);transform:translateY(-2px)}
-.social-icons a i{vertical-align:middle}
+.social-icons {
+  gap: 0.6rem;
+  align-items: center;
+}
+.social-icons a {
+  display: inline-flex;
+  color: var(--muted);
+  font-size: 1.15rem;
+  transition: color 0.18s ease, transform 0.12s ease;
+}
+.social-icons a:hover {
+  color: var(--brand);
+  transform: translateY(-2px);
+}
+.social-icons a i {
+  vertical-align: middle;
+}
 
 /* Small icon used inside cards and tip boxes */
-.box-icon{width:1.15rem;height:1.15rem;margin-right:.5rem;vertical-align:middle;filter:grayscale(20%)}
-.tip-box .box-icon{width:1.2rem;height:1.2rem;margin-right:.6rem}
+.box-icon {
+  width: 1.15rem;
+  height: 1.15rem;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+  filter: grayscale(20%);
+}
+.tip-box .box-icon {
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-right: 0.6rem;
+}
 
 /* Make footer a very light blue while preserving muted text color */
-footer.bg-light{background-color:#91b8da !important; /* very light blue */}
-footer.bg-light .text-muted, footer.bg-light .site-footer{color:var(--muted)}
+footer.bg-light {
+  background-color: #91b8da !important; /* very light blue */
+}
+footer.bg-light .text-muted,
+footer.bg-light .site-footer {
+  color: var(--muted);
+}
 
 /* Resource cards: match footer background for a cohesive look */
-#resources .card{background-color:#91b8da;border:0;color:#0b1724}
-#resources .card .card-body h3{color:inherit}
-#resources .card .card-body p{color:inherit;opacity:0.95}
+#resources .card {
+  background-color: #91b8da;
+  border: 0;
+  color: #0b1724;
+}
+#resources .card .card-body h3 {
+  color: inherit;
+}
+#resources .card .card-body p {
+  color: inherit;
+  opacity: 0.95;
+  font-size: calc(1rem + 5px);
+}
 
 /* Coping tips boxes: match footer and resource card color */
-.tip-box{background-color:#91b8da;border:0;color:#0b1724}
-.tip-box .card-body p{color:inherit;opacity:0.95}
+.tip-box {
+  background-color: #91b8da;
+  border: 0;
+  color: #0b1724;
+}
+.tip-box .card-body p {
+  color: inherit;
+  opacity: 0.95;
+}
 
 /* Self-check area: reverted to default -- earlier lighter-blue styles removed */
+
+/* Center all content inside the main area */
+main {
+  text-align: center;
+}
+main .container {
+  display: block;
+}
+main .row {
+  justify-content: center;
+}
+main .card {
+  margin-left: auto;
+  margin-right: auto;
+}
+main .card .card-body,
+main .tip-box .card-body,
+main p,
+main h1,
+main h2,
+main h3,
+main h4 {
+  text-align: center;
+}
+/* Increase paragraph size by 5px across main content */
+main p {
+  font-size: calc(1rem + 5px);
+}
+/* Keep form controls readable but centered as a block */
+main form {
+  display: inline-block;
+  text-align: left;
+  width: auto;
+}
+
+/* Make all text white across the site (overrides other color rules) */
+/* WARNING: this forces white text everywhere — if some backgrounds are light this may reduce readability. */
+html,
+body,
+body * {
+  color: #ffffff !important;
+}
+
+/* Keep muted elements slightly dimmer but white */
+.text-muted {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+
+/* Prevent fixed navbar from covering anchored content */
+/* Use scroll-margin-top so in-page links account for the fixed navbar height */
+section[id],
+main > [id],
+[id^="section-"] {
+  scroll-margin-top: calc(var(--nav-height) + 0.75rem);
+}
+
+/* Ensure select controls in the self-check area display dark text for readability */
+#self-check .form-select,
+#self-check select {
+  color: #0b1724 !important;
+  background-color: #ffffff !important;
+}
+/* Options inside selects should also show dark text */
+#self-check select option {
+  color: #0b1724 !important;
+  background-color: #ffffff !important;
+}
