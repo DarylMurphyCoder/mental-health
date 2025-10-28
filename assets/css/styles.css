@@ -1,6 +1,6 @@
 :root {
   --brand: #2659ff;
-  --muted: #6c757d;
+  --muted: #ffffff;
   --bg: #85a2c8;
   --nav-height: 64px; /* height for the fixed navbar */
 }
@@ -15,7 +15,7 @@ body {
     Arial;
   line-height: 1.45;
   background: var(--bg);
-  color: #0b1724;
+  color: #ffffff;
   margin: 0;
   padding-top: var(--nav-height);
 }
@@ -42,6 +42,18 @@ header {
   border: 0;
   border-radius: 0.75rem;
 }
+
+/* Image area for resource cards */
+.resource-img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+  border-top-left-radius: 0.75rem;
+  border-top-right-radius: 0.75rem;
+}
+
+.card.h-100 { overflow: hidden; }
 
 /* Ensure hero content inside the header is left-aligned */
 header .container{ text-align: left }
@@ -198,13 +210,13 @@ header .btn:focus {
 }
 .navbar .dropdown-menu .dropdown-item,
 .dropdown-menu .dropdown-item {
-  color: #0b1724 !important; /* dark text */
+  color: #ffffff !important; /* force white text */
 }
 .navbar .dropdown-menu .dropdown-item:hover,
 .dropdown-menu .dropdown-item:hover,
 .navbar .dropdown-menu .dropdown-item:focus,
 .dropdown-menu .dropdown-item:focus {
-  color: #0b1724 !important;
+  color: #ffffff !important;
   background-color: rgba(255,255,255,0.12) !important;
 }
 .dropdown-menu .dropdown-item:hover,
@@ -247,126 +259,68 @@ header .btn:focus {
 }
 
 /* Make footer a very light blue while preserving muted text color */
-footer.bg-light {
-  background-color: #91b8da !important; /* very light blue */
-}
+footer.bg-light{background-color:#91b8da !important; /* AliceBlue - very light blue */}
+/* Make all footer content use white for better contrast on the light-blue footer */
 footer.bg-light .text-muted,
-footer.bg-light .site-footer {
-  color: var(--muted);
+footer.bg-light .site-footer,
+footer.bg-light a,
+footer.bg-light p,
+footer.bg-light strong,
+footer.bg-light .social-icons a,
+footer.bg-light i {
+  color: #ffffff !important;
 }
 
-/* Resource cards: match footer background for a cohesive look */
-#resources .card {
-  background-color: #91b8da;
-  border: 0;
-  color: #ffffff;
-}
-#resources .card .card-body h3 {
-  color: inherit;
-}
-#resources .card .card-body p {
-  color: inherit;
-  opacity: 0.95;
-  font-size: calc(1rem + 5px);
+/* Footer links: keep an accessible hover state */
+footer.bg-light a:hover,
+footer.bg-light a:focus {
+  color: rgba(255,255,255,0.9) !important;
+  text-decoration: underline;
 }
 
-/* Coping tips boxes: match footer and resource card color */
+/* Make resource cards and tip boxes match the footer color for a cohesive look */
+#resources .card,
 .tip-box {
-  background-color: #91b8da;
+  background-color: #91b8da !important;
   border: 0;
-  color: #ffffff;
-}
-.tip-box .card-body p {
-  color: inherit;
-  opacity: 0.95;
+  color: #ffffff !important; /* keep text readable on the colored background */
 }
 
-/* Self-check area: reverted to default -- earlier lighter-blue styles removed */
+#resources .card .card-body,
+.tip-box .card-body {
+  color: #ffffff !important;
+}
 
-/* Center all content inside the main area */
-main {
-  text-align: center;
-}
-main .container {
-  display: block;
-}
-main .row {
-  justify-content: center;
-}
-main .card {
-  margin-left: auto;
-  margin-right: auto;
-}
-main .card .card-body,
-main .tip-box .card-body,
-main p,
+/* Center headings and paragraphs inside the main content area */
 main h1,
 main h2,
 main h3,
-main h4 {
-  text-align: center;
-}
-/* Increase paragraph size by 5px across main content */
-main p {
-  font-size: calc(1rem + 5px);
-}
-/* Keep form controls readable but centered as a block */
-main form {
-  display: inline-block;
-  text-align: left;
-  width: auto;
+main h4,
+main p,
+main .lead,
+main .card-body p {
+	text-align: center;
 }
 
-/* Make all text white across the site (overrides other color rules) */
-/* WARNING: this forces white text everywhere — if some backgrounds are light this may reduce readability. */
+/* Make all text white site-wide, but keep form/select options dark for readability */
 html,
 body,
 body * {
   color: #ffffff !important;
 }
 
-/* Keep muted elements slightly dimmer but white */
-.text-muted {
-  color: rgba(255, 255, 255, 0.75) !important;
-}
-
-/* Prevent fixed navbar from covering anchored content */
-/* Use scroll-margin-top so in-page links account for the fixed navbar height */
-section[id],
-main > [id],
-[id^="section-"] {
-  scroll-margin-top: calc(var(--nav-height) + 0.75rem);
-}
-
-/* Ensure select controls in the self-check area display dark text for readability */
-#self-check .form-select,
-#self-check select {
-  color: #0b1724 !important;
-  background-color: #ffffff !important;
-}
-/* Options inside selects should also show dark text */
-#self-check select option {
-  color: #0b1724 !important;
-  background-color: #ffffff !important;
-}
-
-/* Ensure the main content uses white text everywhere except where explicitly overridden (form dropdowns remain dark). */
-main,
-main * {
+/* Ensure all interactive control text is white as well (selects, inputs, buttons, textarea) */
+select,
+select option,
+input,
+textarea,
+button,
+option {
   color: #ffffff !important;
 }
 
-/* Resource cards and tip boxes should also use white text to match the rest of the site. */
-#resources .card,
-#resources .card .card-body,
-.tip-box,
-.tip-box .card-body {
-  color: #ffffff !important;
-}
-
-/* Ensure headings and paragraphs inside resource/tip cards inherit white */
-#resources .card .card-body h3,
-#resources .card .card-body p,
-.tip-box .card-body p {
-  color: #ffffff !important;
+/* Keep option backgrounds dark so white option text stays readable */
+select option,
+option {
+  background-color: #0b1724 !important;
 }
