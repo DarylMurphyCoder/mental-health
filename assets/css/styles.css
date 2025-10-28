@@ -48,3 +48,7 @@ header {
 .social-icons a{display:inline-flex;color:var(--muted);font-size:1.15rem;transition:color .18s ease,transform .12s ease}
 .social-icons a:hover{color:var(--brand);transform:translateY(-2px)}
 .social-icons a i{vertical-align:middle}
+
+/* Small icon used inside cards and tip boxes */
+.box-icon{width:1.15rem;height:1.15rem;margin-right:.5rem;vertical-align:middle;filter:grayscale(20%)}
+.tip-box .box-icon{width:1.2rem;height:1.2rem;margin-right:.6rem}
