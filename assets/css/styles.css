@@ -56,3 +56,14 @@ header {
 /* Make footer a very light blue while preserving muted text color */
 footer.bg-light{background-color:#91b8da !important; /* AliceBlue - very light blue */}
 footer.bg-light .text-muted, footer.bg-light .site-footer{color:var(--muted)}
+
+/* Center headings and paragraphs inside the main content area */
+main h1,
+main h2,
+main h3,
+main h4,
+main p,
+main .lead,
+main .card-body p {
+	text-align: center;
+}
