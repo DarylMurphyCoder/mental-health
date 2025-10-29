@@ -305,6 +305,30 @@ section[id], [id^="section"], h1[id], h2[id], h3[id], h4[id] {
   }
 }
 
+/* Make the self-check submit button match the navbar/footer color so it feels
+   like a primary site action. We scope these rules to the form to avoid
+   overriding other .btn-primary uses. */
+#selfCheckForm .btn.btn-primary,
+#selfCheckForm button[type="submit"].btn {
+  background-color: var(--footer) !important; /* same as navbar */
+  border-color: var(--footer) !important;
+  color: #ffffff !important;
+  box-shadow: none !important;
+  transition: background-color 140ms ease, transform 120ms ease, box-shadow 120ms ease;
+}
+
+#selfCheckForm .btn.btn-primary:hover,
+#selfCheckForm button[type="submit"].btn:hover {
+  background-color: #b99966 !important; /* slightly darker on hover */
+  transform: translateY(-2px);
+}
+
+#selfCheckForm .btn.btn-primary:focus,
+#selfCheckForm button[type="submit"].btn:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(210,180,140,0.18) !important; /* subtle focus ring */
+}
+
 /* Social icon list used in footer */
 .social-icons {
   gap: 1.25rem; /* increased spacing between icons */
