@@ -327,3 +327,6 @@ main h1 { font-size: calc(2rem + 5px) !important; }
 main h2 { font-size: calc(1.5rem + 5px) !important; }
 main h3 { font-size: calc(1.17rem + 5px) !important; }
 main h4 { font-size: calc(1rem + 5px) !important; }
+/* Emergency hotline */
+
+#hotline {font-size: 75px;}
