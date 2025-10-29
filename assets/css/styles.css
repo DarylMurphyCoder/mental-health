@@ -282,6 +282,29 @@ section[id], [id^="section"], h1[id], h2[id], h3[id], h4[id] {
   background-color: #ffffff !important;
 }
 
+/* Align self-check form labels and inputs on larger screens (laptops) so both
+   select boxes sit at the same vertical position regardless of label length.
+   We make each column a vertical flex container and give labels a consistent
+   minimum height so longer labels don't push the corresponding input lower. */
+@media (min-width: 992px) {
+  #selfCheckForm .col-md-6 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #selfCheckForm .form-label {
+    /* Reserve vertical space for multi-line labels so inputs align
+       across columns. Tweak this value if labels wrap differently. */
+    min-height: 3.4rem;
+    display: block;
+  }
+
+  /* Small top gap for the selects to separate them from labels consistently */
+  #selfCheckForm .form-select {
+    margin-top: 0.25rem;
+  }
+}
+
 /* Social icon list used in footer */
 .social-icons {
   gap: 1.25rem; /* increased spacing between icons */
