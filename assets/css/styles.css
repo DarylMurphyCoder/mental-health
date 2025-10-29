@@ -354,3 +354,8 @@ main h4 { font-size: calc(1rem + 5px) !important; }
    stylesheet. Avoid duplicating them here to prevent contradictory rules and
    excessive !important usage. If you want different colors for specific form
    controls, add scoped rules near those components instead. */
+
+/* Give all headings (h1-h6) an extra 15px vertical padding for spacing */
+h1, h2, h3, h4, h5, h6 {
+  padding-block: 15px; /* vertical padding: top and bottom */
+}
