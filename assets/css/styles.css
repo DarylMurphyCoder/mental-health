@@ -1,7 +1,7 @@
 :root {
   --brand: #2659ff;
   --muted: #ffffff;
-  --bg: #85a2c8;
+  --bg: #e6c9a1; /* page background: light tan */
   --nav-height: 64px; /* height for the fixed navbar */
 }
 /* Basic reset and body */
@@ -15,7 +15,7 @@ body {
     Arial;
   line-height: 1.45;
   background: var(--bg);
-  color: #ffffff;
+  color: #2b2b2b; /* dark text for readability on light tan background */
   margin: 0;
   padding-top: var(--nav-height);
 }
@@ -209,20 +209,20 @@ section[id], [id^="section"], h1[id], h2[id], h3[id], h4[id] {
   scroll-margin-top: calc(var(--nav-height) + 0.5rem);
 }
 
-/* Make navbar use the same background as the page so it blends with main content */
+/* Make navbar use a light brown background for a warmer look */
 .navbar.bg-white {
-  background-color: var(--bg) !important;
+  background-color: #d2b48c !important; /* tan/light brown */
 }
-/* Ensure navbar text is white for contrast against the blue background */
+/* Ensure navbar text is dark for contrast against the light brown background */
 .navbar.bg-white .nav-link {
-  color: #ffffff !important;
+  color: #2b2b2b !important; /* dark charcoal */
 }
 .navbar.bg-white .navbar-brand {
-  color: #ffffff !important;
+  color: #2b2b2b !important;
 }
-/* Make the toggler (hamburger) visible on the darker background */
+/* Make the toggler (hamburger) visible on the lighter background */
 .navbar.bg-white .navbar-toggler-icon {
-  filter: invert(1) brightness(2);
+  filter: none;
 }
 
 /* Dropdown menu styling to match navbar: white text, tighter spacing */
@@ -285,8 +285,9 @@ section[id], [id^="section"], h1[id], h2[id], h3[id], h4[id] {
 }
 
 /* Make footer a very light blue while preserving muted text color */
-footer.bg-light{background-color:#91b8da !important; /* AliceBlue - very light blue */}
-footer.bg-light .text-muted, footer.bg-light .site-footer{color:var(--muted)}
+/* Footer uses same light brown as the navbar for visual unity */
+footer.bg-light{background-color:#d2b48c !important; /* tan/light brown */}
+footer.bg-light .text-muted, footer.bg-light .site-footer{color:#2b2b2b !important}
 
 /* Center headings and paragraphs inside the main content area */
 main h1,
