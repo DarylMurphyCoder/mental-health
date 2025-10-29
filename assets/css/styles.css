@@ -228,9 +228,9 @@ section[id], [id^="section"], h1[id], h2[id], h3[id], h4[id] {
 .navbar.bg-white {
   background-color: #d2b48c !important; /* tan/light brown */
 }
-/* Ensure navbar text is dark for contrast against the light brown background */
+/* Ensure navbar links are white for contrast against the tan background */
 .navbar.bg-white .nav-link {
-  color: #2b2b2b !important; /* keep links dark */
+  color: #ffffff !important; /* make navbar links white */
 }
 /* Make the navbar brand/icon white */
 .navbar.bg-white .navbar-brand {
