@@ -135,6 +135,10 @@ header .btn:focus {
   }
 }
 
+/* Image area for resource cards */
+.resource-img{display:block;width:100%;height:140px;object-fit:cover}
+.card.h-100{overflow:hidden}
+
 /* Tips box styling */
 .tip-box {
   border-radius: 0;
@@ -306,8 +310,19 @@ section[id], [id^="section"], h1[id], h2[id], h3[id], h4[id] {
 }
 
 /* Make footer a very light blue while preserving muted text color */
-footer.bg-light{background-color:#91b8da !important; /* AliceBlue - very light blue */}
-footer.bg-light .text-muted, footer.bg-light .site-footer{color:var(--muted)}
+/* Footer uses same light brown as the navbar for visual unity */
+/* Footer uses same light brown as the navbar for visual unity */
+footer.bg-light{background-color:var(--footer) !important;}
+footer.bg-light .text-muted, footer.bg-light .site-footer{color:#ffffff !important}
+
+/* Resource cards: match footer background for a cohesive look */
+#resources .card{background-color:#91b8da;border:0;color:#0b1724}
+#resources .card .card-body h3{color:inherit}
+#resources .card .card-body p{color:inherit;opacity:0.95}
+
+/* Coping tips boxes: match footer and resource card color */
+.tip-box{background-color:#91b8da;border:0;color:#0b1724}
+.tip-box .card-body p{color:inherit;opacity:0.95}
 
 /* Center headings and paragraphs inside the main content area */
 main h1,
@@ -317,27 +332,7 @@ main h4,
 main p,
 main .lead,
 main .card-body p {
-	text-align: center;
-}
-
-/* Force all textual content to white across the site */
-html,
-body,
-body * {
-	color: #ffffff !important;
-}
-
-/* Ensure form controls and options also show white text; keep option backgrounds dark for contrast */
-select,
-input,
-textarea,
-button,
-option {
-	color: #ffffff !important;
-}
-
-option {
-	background-color: #0b1724 !important;
+  text-align: center;
 }
 
 /* Slightly increase heading sizes in the main content area by 5px */
@@ -345,6 +340,11 @@ main h1 { font-size: calc(2rem + 5px) !important; }
 main h2 { font-size: calc(1.5rem + 5px) !important; }
 main h3 { font-size: calc(1.17rem + 5px) !important; }
 main h4 { font-size: calc(1rem + 5px) !important; }
-/* Emergency hotline */
 
-#hotline {font-size: 75px;}
+/* Emergency hotline styling (adjust as needed) */
+#hotline { font-size: 1.5rem; font-weight: 700; }
+
+/* Note: global text color and form control color rules already appear earlier in this
+   stylesheet. Avoid duplicating them here to prevent contradictory rules and
+   excessive !important usage. If you want different colors for specific form
+   controls, add scoped rules near those components instead. */
