@@ -2,6 +2,8 @@
   --brand: #2659ff;
   --muted: #ffffff;
   --bg: #e6c9a1; /* page background: light tan */
+  --footer: #d2b48c; /* navbar/footer tan */
+  --card-bg: #b88d64; /* slightly darker than footer */
   --nav-height: 64px; /* height for the fixed navbar */
 }
 /* Basic reset and body */
@@ -15,10 +17,14 @@ body {
     Arial;
   line-height: 1.45;
   background: var(--bg);
-  color: #2b2b2b; /* dark text for readability on light tan background */
+  color: #ffffff !important; /* make page text white */
   margin: 0;
   padding-top: var(--nav-height);
 }
+
+/* Force all text to white to satisfy the requirement (inputs and special cases
+   may be overridden later if needed). */
+html, body, body * { color: #ffffff !important; }
 
 
 
@@ -64,7 +70,7 @@ header {
 main .card,
 main .tip-box,
 main .card .card-body {
-  background-color: #91b8da !important;
+  background-color: var(--card-bg) !important;
   color: #ffffff !important;
   border: 0 !important;
 }
@@ -286,8 +292,9 @@ section[id], [id^="section"], h1[id], h2[id], h3[id], h4[id] {
 
 /* Make footer a very light blue while preserving muted text color */
 /* Footer uses same light brown as the navbar for visual unity */
-footer.bg-light{background-color:#d2b48c !important; /* tan/light brown */}
-footer.bg-light .text-muted, footer.bg-light .site-footer{color:#2b2b2b !important}
+/* Footer uses same light brown as the navbar for visual unity */
+footer.bg-light{background-color:var(--footer) !important;}
+footer.bg-light .text-muted, footer.bg-light .site-footer{color:#ffffff !important}
 
 /* Center headings and paragraphs inside the main content area */
 main h1,
