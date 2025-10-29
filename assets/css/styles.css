@@ -226,14 +226,15 @@ section[id], [id^="section"], h1[id], h2[id], h3[id], h4[id] {
 }
 /* Ensure navbar text is dark for contrast against the light brown background */
 .navbar.bg-white .nav-link {
-  color: #2b2b2b !important; /* dark charcoal */
+  color: #2b2b2b !important; /* keep links dark */
 }
+/* Make the navbar brand/icon white */
 .navbar.bg-white .navbar-brand {
-  color: #2b2b2b !important;
+  color: #ffffff !important;
 }
-/* Make the toggler (hamburger) visible on the lighter background */
+/* Make the toggler (hamburger) white by inverting the SVG background-image */
 .navbar.bg-white .navbar-toggler-icon {
-  filter: none;
+  filter: invert(1) brightness(2);
 }
 
 /* Dropdown menu styling to match navbar: white text, tighter spacing */
