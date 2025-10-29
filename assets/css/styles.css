@@ -33,8 +33,8 @@ header {
     100vh - var(--nav-height)
   ); /* make header fill the viewport height minus navbar */
   display: flex;
-  align-items: flex-start; /* align hero content to top */
-  padding-top: 2rem; /* nudge content down slightly from very top */
+  align-items: flex-end; /* align hero content to bottom */
+  padding-top: 0; /* remove top nudge so content sits at bottom */
   position: relative; /* ensure absolutely positioned hero elements anchor correctly */
 }
 /* Tweak card appearance */
@@ -71,7 +71,7 @@ main .card .card-body {
 
 /* Ensure hero content inside the header is left-aligned */
 header .container{ text-align: left }
-header .col-lg-7{ align-self:flex-start }
+header .col-lg-7{ align-self:flex-end }
 
 /* Reduce hero content sizes approximately 20px visually on larger screens.
    This targets display headings and buttons inside the hero. */
