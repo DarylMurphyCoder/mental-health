@@ -151,6 +151,11 @@ header .btn:focus {
   color: var(--muted);
 }
 
+/* Increase muted helper text size by 10px relative to the parent for readability */
+.text-muted {
+  font-size: calc(1em + 10px) !important;
+}
+
 /* Responsive tweaks */
 @media (max-width: 575.98px) {
   .hero-illustration {
@@ -268,7 +273,7 @@ section[id], [id^="section"], h1[id], h2[id], h3[id], h4[id] {
 
 /* Social icon list used in footer */
 .social-icons {
-  gap: 0.6rem;
+  gap: 1.25rem; /* increased spacing between icons */
   align-items: center;
 }
 .social-icons a {
