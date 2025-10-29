@@ -342,7 +342,7 @@ main h3 { font-size: calc(1.17rem + 5px) !important; }
 main h4 { font-size: calc(1rem + 5px) !important; }
 
 /* Emergency hotline styling (adjust as needed) */
-#hotline { font-size: 1.5rem; font-weight: 700; }
+#hotline { font-size: 75px; font-weight: 700; }
 
 /* Note: global text color and form control color rules already appear earlier in this
    stylesheet. Avoid duplicating them here to prevent contradictory rules and
