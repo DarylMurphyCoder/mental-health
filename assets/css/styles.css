@@ -257,6 +257,15 @@ section[id], [id^="section"], h1[id], h2[id], h3[id], h4[id] {
   color: #ffffff;
 }
 
+/* Self-check form selects should display black text on white so options are readable
+   (some browsers ignore inherited color on <option>, so set both the select and
+   option backgrounds/text explicitly) */
+#selfCheckForm .form-select,
+#selfCheckForm .form-select option {
+  color: #000000 !important;
+  background-color: #ffffff !important;
+}
+
 /* Social icon list used in footer */
 .social-icons {
   gap: 0.6rem;
