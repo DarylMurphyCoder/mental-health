@@ -321,3 +321,9 @@ main .lead,
 main .card-body p {
 	text-align: center;
 }
+
+/* Slightly increase heading sizes in the main content area by 5px */
+main h1 { font-size: calc(2rem + 5px) !important; }
+main h2 { font-size: calc(1.5rem + 5px) !important; }
+main h3 { font-size: calc(1.17rem + 5px) !important; }
+main h4 { font-size: calc(1rem + 5px) !important; }
