@@ -24,7 +24,7 @@ body {
 
 /* Header background: use a single image that covers the viewport without repeating */
 header {
-  background-image: url("../images/mentalhealthherono.jpeg");
+  background-image: url("../images/zac-durant-_6HzPU9Hyfg-unsplash.jpg");
   background-size: cover; /* scale image to cover entire header area */
   background-position: center; /* center the focal point */
   background-repeat: no-repeat; /* prevent tiling of small images */
@@ -195,6 +195,18 @@ header .btn:focus {
   height: var(--nav-height);
   display: flex;
   align-items: center;
+}
+
+/* Prevent the fixed navbar from overlapping anchored content when links target IDs.
+   Use scroll-padding-top for browsers that honor it and provide a fallback via
+   scroll-margin-top on common block targets. We add a small extra offset so
+   headings aren't flush against the navbar. */
+html { scroll-padding-top: var(--nav-height); }
+
+/* Apply to sections and common heading targets so jumping-to anchors places them
+   below the fixed navbar across browsers. Add a small extra gap for breathing room. */
+section[id], [id^="section"], h1[id], h2[id], h3[id], h4[id] {
+  scroll-margin-top: calc(var(--nav-height) + 0.5rem);
 }
 
 /* Make navbar use the same background as the page so it blends with main content */
