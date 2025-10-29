@@ -151,6 +151,11 @@ header .btn:focus {
   color: var(--muted);
 }
 
+/* Increase muted helper text size by 10px relative to the parent for readability */
+.text-muted {
+  font-size: calc(1em + 10px) !important;
+}
+
 /* Responsive tweaks */
 @media (max-width: 575.98px) {
   .hero-illustration {
@@ -221,14 +226,15 @@ section[id], [id^="section"], h1[id], h2[id], h3[id], h4[id] {
 }
 /* Ensure navbar text is dark for contrast against the light brown background */
 .navbar.bg-white .nav-link {
-  color: #2b2b2b !important; /* dark charcoal */
+  color: #2b2b2b !important; /* keep links dark */
 }
+/* Make the navbar brand/icon white */
 .navbar.bg-white .navbar-brand {
-  color: #2b2b2b !important;
+  color: #ffffff !important;
 }
-/* Make the toggler (hamburger) visible on the lighter background */
+/* Make the toggler (hamburger) white by inverting the SVG background-image */
 .navbar.bg-white .navbar-toggler-icon {
-  filter: none;
+  filter: invert(1) brightness(2);
 }
 
 /* Dropdown menu styling to match navbar: white text, tighter spacing */
@@ -268,7 +274,7 @@ section[id], [id^="section"], h1[id], h2[id], h3[id], h4[id] {
 
 /* Social icon list used in footer */
 .social-icons {
-  gap: 0.6rem;
+  gap: 1.25rem; /* increased spacing between icons */
   align-items: center;
 }
 .social-icons a {
