@@ -228,9 +228,9 @@ section[id], [id^="section"], h1[id], h2[id], h3[id], h4[id] {
 .navbar.bg-white {
   background-color: #d2b48c !important; /* tan/light brown */
 }
-/* Ensure navbar text is dark for contrast against the light brown background */
+/* Ensure navbar links are white for contrast against the tan background */
 .navbar.bg-white .nav-link {
-  color: #2b2b2b !important; /* keep links dark */
+  color: #ffffff !important; /* make navbar links white */
 }
 /* Make the navbar brand/icon white */
 .navbar.bg-white .navbar-brand {
@@ -249,6 +249,11 @@ section[id], [id^="section"], h1[id], h2[id], h3[id], h4[id] {
 .dropdown-menu .dropdown-item {
   color: #ffffff;
   padding: 0.35rem 0.75rem;
+  /* Put a subtle boxed background behind each dropdown item to improve legibility */
+  background-color: rgba(255,255,255,0.06);
+  border-radius: 0.35rem;
+  margin: 0.25rem 0; /* small gap between items so the box shows */
+  display: block; /* keep full-width clickable area while showing the box */
 }
 .navbar .dropdown-menu .dropdown-item,
 .dropdown-menu .dropdown-item {
@@ -259,7 +264,8 @@ section[id], [id^="section"], h1[id], h2[id], h3[id], h4[id] {
 .navbar .dropdown-menu .dropdown-item:focus,
 .dropdown-menu .dropdown-item:focus {
   color: #ffffff !important;
-  background-color: rgba(255,255,255,0.12) !important;
+  background-color: rgba(255,255,255,0.14) !important;
+  transform: translateY(-1px);
 }
 .dropdown-menu .dropdown-item:hover,
 .dropdown-menu .dropdown-item:focus {
@@ -348,3 +354,8 @@ main h4 { font-size: calc(1rem + 5px) !important; }
    stylesheet. Avoid duplicating them here to prevent contradictory rules and
    excessive !important usage. If you want different colors for specific form
    controls, add scoped rules near those components instead. */
+
+/* Give all headings (h1-h6) an extra 15px vertical padding for spacing */
+h1, h2, h3, h4, h5, h6 {
+  padding-block: 15px; /* vertical padding: top and bottom */
+}
