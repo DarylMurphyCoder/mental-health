@@ -273,6 +273,44 @@ section[id], [id^="section"], h1[id], h2[id], h3[id], h4[id] {
   color: #ffffff;
 }
 
+/* Improve dropdown visibility on small screens: give the dropdown a strong
+   boxed background, full-width clickable items, and high z-index so items are
+   readable when the navbar is collapsed. Scope these rules to `.navbar` so
+   other dropdowns elsewhere are unaffected. */
+.navbar .dropdown-menu {
+  background-color: var(--footer) !important; /* match navbar/footer color */
+  color: #ffffff !important;
+  padding: 0.5rem !important;
+  border-radius: 0.35rem !important;
+  box-shadow: 0 8px 24px rgba(2,6,23,0.16) !important;
+  z-index: 1100 !important; /* above other content */
+}
+
+.navbar .dropdown-menu .dropdown-item {
+  color: #ffffff !important;
+  background-color: transparent !important; /* cleared boxed background handled by menu */
+  padding: 0.5rem 0.75rem !important;
+  margin: 0 !important;
+  border-radius: 0.25rem !important;
+}
+
+/* When the navbar is collapsed on small screens, keep the dropdown inline (static)
+   so items appear within the collapsed menu and remain readable. Adjust spacing
+   so the menu doesn't overlap important content. */
+@media (max-width: 991.98px) {
+  .navbar .dropdown-menu {
+    position: static !important;
+    box-shadow: none !important;
+    margin-top: 0.5rem !important;
+    width: 100% !important;
+  }
+  .navbar .dropdown-menu .dropdown-item {
+    display: block !important;
+    width: 100% !important;
+    text-align: left !important;
+  }
+}
+
 /* Self-check form selects should display black text on white so options are readable
    (some browsers ignore inherited color on <option>, so set both the select and
    option backgrounds/text explicitly) */
