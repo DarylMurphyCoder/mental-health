@@ -176,7 +176,7 @@ header .btn:focus {
     padding: 0.5rem 0.75rem;
   }
   .navbar .navbar-collapse .nav-link {
-    background-color: #000000 !important;
+    background-color: var(--footer) !important;
     color: #ffffff !important;
     padding: 0.5rem 0.75rem !important;
     border-radius: 0.35rem !important;
@@ -298,11 +298,11 @@ section[id], [id^="section"], h1[id], h2[id], h3[id], h4[id] {
    readable when the navbar is collapsed. Scope these rules to `.navbar` so
    other dropdowns elsewhere are unaffected. */
 .navbar .dropdown-menu {
-  background-color: #000000 !important; /* black box for max contrast */
+  background-color: var(--footer) !important; /* match navbar/footer color */
   color: #ffffff !important;
   padding: 0.5rem !important;
   border-radius: 0.35rem !important;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.5) !important;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25) !important;
   z-index: 1100 !important; /* above other content */
 }
 
@@ -323,7 +323,7 @@ section[id], [id^="section"], h1[id], h2[id], h3[id], h4[id] {
     box-shadow: none !important;
     margin-top: 0.5rem !important;
     width: 100% !important;
-    background-color: #000000 !important; /* ensure black background on mobile as well */
+    background-color: var(--footer) !important; /* ensure navbar/footer color on mobile as well */
   }
   .navbar .dropdown-menu .dropdown-item {
     display: block !important;
