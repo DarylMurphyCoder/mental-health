@@ -54,10 +54,20 @@ Or open `index.html` directly in your browser. Using a local server is recommend
 - Convert the self-check result to use a Bootstrap Toast or Modal for clearer feedback.
 - Add SVG illustrations (accessible with descriptive text) to improve visual clarity.
 
+## Screenshots
+
+Here are quick visual references of the page (generated mock screenshots). Replace these with real screenshots if you prefer — drop PNG/SVG files into `assets/screenshots/` and update the filenames below.
+
+### Desktop
+
+![Desktop screenshot](assets/screenshots/desktop.svg)
+
+### Mobile (collapsed)
+
+![Mobile screenshot](assets/screenshots/mobile.svg)
+
+
 ## License
 
 No license is specified. Add a `LICENSE` file (for example MIT) if you want to open-source this project.
 
----
-
-If you'd like, I can update the self-check to show a Bootstrap Toast, add SVG artwork, or create a GitHub Actions workflow that validates HTML/CSS on each PR  tell me which and I'll implement it.
