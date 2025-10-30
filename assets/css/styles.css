@@ -169,6 +169,26 @@ header .btn:focus {
     min-height: calc(60vh - var(--nav-height));
   } /* shorter header on small screens to avoid excessive scroll */
 }
+  /* Give collapsed navbar links a boxed background so they're readable
+     when the hamburger menu is opened on small screens. This scopes the
+     styling to the collapsed menu only to avoid altering desktop layout. */
+  .navbar .navbar-collapse {
+    padding: 0.5rem 0.75rem;
+  }
+  .navbar .navbar-collapse .nav-link {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    padding: 0.5rem 0.75rem !important;
+    border-radius: 0.35rem !important;
+    margin: 0.25rem 0 !important;
+    display: block !important;
+    width: 100% !important;
+  }
+  /* Ensure dropdown toggles and caret stay visible */
+  .navbar .navbar-collapse .nav-item .dropdown-toggle::after {
+    color: #ffffff !important;
+    margin-left: 0.35rem;
+  }
 
 /* Laptops and larger: align hero content to bottom-left and make it 15px larger */
 @media (min-width: 992px) {
@@ -278,11 +298,11 @@ section[id], [id^="section"], h1[id], h2[id], h3[id], h4[id] {
    readable when the navbar is collapsed. Scope these rules to `.navbar` so
    other dropdowns elsewhere are unaffected. */
 .navbar .dropdown-menu {
-  background-color: var(--footer) !important; /* match navbar/footer color */
+  background-color: #000000 !important; /* black box for max contrast */
   color: #ffffff !important;
   padding: 0.5rem !important;
   border-radius: 0.35rem !important;
-  box-shadow: 0 8px 24px rgba(2,6,23,0.16) !important;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.5) !important;
   z-index: 1100 !important; /* above other content */
 }
 
@@ -303,6 +323,7 @@ section[id], [id^="section"], h1[id], h2[id], h3[id], h4[id] {
     box-shadow: none !important;
     margin-top: 0.5rem !important;
     width: 100% !important;
+    background-color: #000000 !important; /* ensure black background on mobile as well */
   }
   .navbar .dropdown-menu .dropdown-item {
     display: block !important;
